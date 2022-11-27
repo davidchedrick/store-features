@@ -1,7 +1,8 @@
-export default function index() {
+export default function IndexPage() {
   return (
-    <div>
+    <>
       <p>hello cat!</p>
-    </div>
+      <p>This child</p>
+    </>
   );
 }
