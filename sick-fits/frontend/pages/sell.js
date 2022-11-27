@@ -1,4 +1,4 @@
-export default function index() {
+export default function SellPage() {
   return (
     <div>
       <p>hello cat!</p>
