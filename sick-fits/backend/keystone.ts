@@ -40,10 +40,14 @@ export default withAuth(
       User,
     }),
     ui: {
-      isAccessAllowed: ({ session }) => !!session?.data,
+      // Show the UI only for poeple who pass this test
+      isAccessAllowed: ({ session }) =>
+        // console.log(session);
+        !!session?.data,
     },
     session: withItemData(statelessSessions(sessionsConfig), {
-      User: 'id',
+      // GraphQL Query
+      User: 'id name email',
     }),
   })
 );
