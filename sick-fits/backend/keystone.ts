@@ -13,7 +13,7 @@ import { insertSeedData } from './seed-data';
 const databaseURL = process.env.DATABASE_URL;
 
 const sessionsConfig = {
-  // how long they should stay signed in
+  // how long they should stay signed in:
   maxAge: 60 * 60 * 24 * 360,
   secret: process.env.COOKIE_SECRET,
 };
