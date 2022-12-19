@@ -27,6 +27,7 @@ export const Product = list({
       defaultValue: 'DRAFT',
       ui: {
         displayMode: 'segmented-control',
+        // createView: { fieldMode: 'hidden' },
       },
     }),
     price: integer(),
