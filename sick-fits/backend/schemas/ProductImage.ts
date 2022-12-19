@@ -9,6 +9,7 @@ export const cloudinary = {
   apiSecret: process.env.CLOUDINARY_SECRET,
   folder: 'bodhifits',
 };
+
 export const ProductImage = list({
   fields: {
     image: cloudinaryImage({
