@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import formatMoney from '../lib/formatMoney';
 import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import Title from './styles/Title';
 
 /* eslint-disable react/prop-types */
 export default function Product({ product }) {
+  console.log('product: ', product);
   return (
     <ItemStyles>
       <img
@@ -14,7 +16,8 @@ export default function Product({ product }) {
       <Title>
         <Link href={`/product/${product.id}`}>{product.name}</Link>
       </Title>
-      <PriceTag>{product.price}</PriceTag>
+      <PriceTag>{formatMoney(product.price)}</PriceTag>
+      <p>{product.description}</p>
     </ItemStyles>
   );
 }
