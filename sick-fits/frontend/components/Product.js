@@ -6,7 +6,6 @@ import Title from './styles/Title';
 
 /* eslint-disable react/prop-types */
 export default function Product({ product }) {
-  console.log('product: ', product);
   return (
     <ItemStyles>
       <img
