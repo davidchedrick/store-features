@@ -38,7 +38,6 @@ export default function CreateProduct() {
     price: 23,
     description: 'cute',
   });
-  console.log('inputs: ', inputs);
 
   const [createProduct, { loading, error, data }] = useMutation(
     CREATE_PRODUCT_MUTATION,

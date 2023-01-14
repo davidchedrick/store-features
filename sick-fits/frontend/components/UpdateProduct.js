@@ -45,7 +45,11 @@ export default function UpdateProduct({ id }) {
     { data: updateData, error: updateError, loading: updateLoading },
   ] = useMutation(UPDATE_PRODUCT_MUTATION);
 
-  const { inputs, handleChange, clearForm, resetForm } = useForm(data?.Product);
+  const { inputs, handleChange, clearForm, resetForm } = useForm({
+    name: data?.Product.name || '',
+    price: data?.Product.price || 0,
+    description: data?.Product.description || '',
+  });
   if (loading) return <p>loading...</p>;
   return (
     <Form
