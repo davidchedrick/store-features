@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import UpdateProduct from '../components/UpdateProduct';
 
-export default function UpdatePage() {
+export default function UpdatePage({ query }) {
   return (
     <div>
-      <UpdateProduct />
+      <UpdateProduct id={query.id} />
     </div>
   );
 }
