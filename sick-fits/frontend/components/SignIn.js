@@ -34,19 +34,22 @@ export default function SignIn() {
     // refetch the currently logged in user
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
+
   async function handleSubmit(e) {
-    e.preventDefault(); // stop the form from submitting
-    console.log(inputs);
+    e.preventDefault();
+    console.log('inputs:', inputs);
     const res = await signin();
-    console.log(res);
+    console.log('res', res);
     resetForm();
     // Send the email and password to the graphqlAPI
   }
+
   const error =
     data?.authenticateUserWithPassword.__typename ===
     'UserAuthenticationWithPasswordFailure'
       ? data?.authenticateUserWithPassword
       : undefined;
+
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <h2>Sign Into Your Account</h2>
@@ -57,7 +60,7 @@ export default function SignIn() {
           <input
             type="email"
             name="email"
-            placeholder="Your Email Address"
+            placeholder="Email"
             autoComplete="email"
             value={inputs.email}
             onChange={handleChange}
